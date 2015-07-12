@@ -1,3 +1,3 @@
 # Telerik-Academy
-My Homeworks
+My Homeworks. 
 I love javaScript.
