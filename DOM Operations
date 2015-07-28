@@ -28,19 +28,19 @@ module.exports = function () {
     
     if(!contents||contents.some(function(item){
       return typeof item != 'string' && typeof item != 'number';
-    })){
-      throw new Error('The array should contains only strings and numbers');
+    	})){
+      	   throw new Error('The array should contains only strings and numbers');
     }
 	
-	if (typeof idOrDomElement  == 'string') {
+    if (typeof idOrDomElement  == 'string') {
       element = document.getElementById(idOrDomElement);
-    } else {
-      element = idOrDomElement;
+      } else {
+           element = idOrDomElement;
     }
 
-	element.innerHTML='';
-		for (i=0,len=contents.length; i<len;i+=1) {
-			element.innerHTML += '<div>'+contents[i]+'</div>';
-		}
+   element.innerHTML='';
+      for (i=0,len=contents.length; i<len;i+=1) {
+	   element.innerHTML += '<div>'+contents[i]+'</div>';
+	}
   };
 };
