@@ -38,9 +38,9 @@ module.exports = function () {
            element = idOrDomElement;
     }
 
-   element.innerHTML='';
-      for (i=0,len=contents.length; i<len;i+=1) {
-	   element.innerHTML += '<div>'+contents[i]+'</div>';
-	}
+    element.innerHTML='';
+    for (i=0,len=contents.length; i<len;i+=1) {
+        element.innerHTML += '<div>'+contents[i]+'</div>';
+    }
   };
 };
