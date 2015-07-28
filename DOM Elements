@@ -22,7 +22,7 @@ module.exports = function () {
         i,
         len;
 		
-    if(typeof idOrDomElement !='string' && !idOrDomElement.nodeName){
+    if(typeof idOrDomElement !='string' && !idOrDomElement.tagName){
       throw new Error('The first parameter is not a valid parameter');
     }
     
