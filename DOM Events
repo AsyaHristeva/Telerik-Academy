@@ -23,12 +23,10 @@ function solve(){
 	     
 	      var next = this.nextElementSibling;
 	
-	      while (next.className != 'button') {
-	        if (next.className == 'content') {
-	          break;
-		}
+	      while (next.className == 'button') {
 		next = next.nextElementSibling;
-      	      }
+              }
+	      next = next.nextElementSibling;
 		   
        	   if (next.style.display == '') {
               this.innerHTML = 'show';
