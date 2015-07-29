@@ -1,0 +1,32 @@
+function solve(){
+  return function (selector) {
+	var buttons,
+       content,
+		next;
+
+    if(typeof selector !='string'||$(selector).length==0){
+    	throw new Error("The function's parameter is not a valid parameter");
+    }
+	
+	buttons = $('.button');
+   content = $('.content');
+	
+$('.button').text('hide');
+
+        $('.button').click(function(){
+              next = $(this).next();
+		  while (next.hasClass('button')) {
+			   next = next.next();
+              }
+			  
+            if (next.css('display') =='none') {
+              $(this).text('hide');
+              next.css('display','');
+           }
+              else {
+                 $(this).text('show');
+                 next.css('display',"none");
+              }
+    });
+  };
+};
