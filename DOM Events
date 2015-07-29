@@ -1,0 +1,45 @@
+function solve(){
+  return function (selector) {
+	var element,
+	    elementsClassButton,
+		  elementsClassContent,
+		  onButtonClick;
+		
+  if(typeof selector !='string' && !selector.tagName){
+    throw new Error("The function's parameter is not a valid parameter");
+  }
+	
+	if (typeof selector == 'string') {
+    element = document.getElementById(selector);
+    } else {
+      element = selector;
+    }
+  
+	elementsClassContent=element.querySelectorAll('.content');
+	
+	elementsClassButton=element.querySelectorAll('.button');
+	
+	[].forEach.call(elementsClassButton, function (button) {
+		button.innerHTML = "hide"; 
+		button.addEventListener("click", function() {
+      var next = this.nextElementSibling;
+
+      while (next.className != 'button') {
+        if (next.className == 'content') {
+          break;
+				}
+				next = next.nextElementSibling;
+      }
+		   
+			if (next.style.display == '') {
+              this.innerHTML = 'show';
+              next.style.display = "none";
+           }
+              else if (next.style.display == 'none') {
+                 this.innerHTML = "hide";
+                 next.style.display = '';
+              }
+	}, false);  
+	}); 
+  };
+};
