@@ -1,23 +1,21 @@
 function solve(){
   return function (selector) {
-	var buttons,
-       content,
+	   var 	buttons,
+       		content,
 		next;
 
     if(typeof selector !='string'||$(selector).length==0){
     	throw new Error("The function's parameter is not a valid parameter");
     }
 	
-	buttons = $('.button');
-   content = $('.content');
+	buttons = $(selector).find('.button');
+   	content = $(selector).find('.content');
 	
-$('.button').text('hide');
-
-        $('.button').click(function(){
-              next = $(this).next();
-		  while (next.hasClass('button')) {
-			   next = next.next();
-              }
+	buttons.text('hide').click(function(){
+	 	next = $(this).next();
+	 	while (next.hasClass('button')) {
+			next = next.next();
+                }
 			  
             if (next.css('display') =='none') {
               $(this).text('hide');
