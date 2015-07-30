@@ -9,7 +9,7 @@ function solve() {
 		$(selector).prepend('<ul class="items-list"></ul>');
 		
 		for (index=0;index<count;index+=1) {
-			$("<li class='list-item'>List item #"+(index+1)+"</li>").appendTo('.items-list');
+			$("<li class='list-item'>List item #"+index+"</li>").appendTo('.items-list');
 		}
   };
 };
