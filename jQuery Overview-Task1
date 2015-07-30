@@ -2,7 +2,7 @@ function solve() {
   return function (selector, count) {
 	    var	index;
 		
-		if (count<1&&count%1!=0) {
+		if (count<1||count%1!=0) {
 			throw new Error('Count must be a positive integer');
 		}
 		
