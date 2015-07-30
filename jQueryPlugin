@@ -1,14 +1,10 @@
 function solve(){
   return function(selector){
 	 var index; 
-	  
-	$('select').attr('id', 'the-select');
-	
+
 	$('<div class="dropdown-list"></div>').prependTo('body');
-	
-	//$('h1').prependTo('#dropdown-list');
-	
-	$('#the-select').appendTo('.dropdown-list')
+
+	$(selector).appendTo('.dropdown-list')
 	.css("display", "none");
 	
 	$('<div class="current" data-value="">Option 1</div>')
