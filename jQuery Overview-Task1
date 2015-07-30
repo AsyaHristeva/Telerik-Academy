@@ -1,0 +1,15 @@
+function solve() {
+  return function (selector, count) {
+	    var	index;
+		
+		if (count<1&&count%1!=0) {
+			throw new Error('Count must be a positive integer');
+		}
+		
+		$('#root').prepend('<ul class="items-list"></ul>');
+		
+		for (index=0;index<count;index+=1) {
+			$("<li class='list-item'>List item #"+(index+1)+"</li>").appendTo('.items-list');
+		}
+  };
+};
