@@ -21,9 +21,9 @@ function solve(){
 	
 	for(index=0;index<len;index+=1) {  
 		$('<div/>', {'class':'dropdown-item',
-				'data-value':index-1,
+				'data-value':$(selectors).eq(index).val(),
 				'data-index':index,
-				text:selectors.eq(index).text()})
+				text:$(selectors).eq(index).text()})
 		.appendTo('.options-container');
 	}  
 	
@@ -32,6 +32,7 @@ function solve(){
 	});
 	 
 	$('.dropdown-item').click(function(){
+	$(selector).val($(this).attr('data-value'));
 	$('.current').text($(this).text());
 	$('.options-container').hide();
 	});
